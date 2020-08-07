@@ -43,6 +43,26 @@ mutation {
 }
 ```
 
+### Login
+
+```
+mutation {
+  login(
+    email: "alice@prisma.io"
+    password: "graphql"
+  ) {
+    token
+    user {
+      email
+      links {
+        url
+        description
+      }
+    }
+  }
+}
+```
+
 ### Authrized user
 
 From the server’s response, copy the authentication token and open another tab in the Playground. Inside that new tab, open the HTTP HEADERS pane in the bottom-left corner and specify the Authorization header - similar to what you did with the Prisma Playground before. Replace the **TOKEN** placeholder in the following snippet with the copied token:
@@ -69,3 +89,27 @@ mutation {
   }
 }
 ```
+
+### test subcription
+
+1. run server
+1. open two tabs in the browser
+1. playground one send subscribe
+
+```
+subscription {
+  newLink {
+      id
+      url
+      description
+      postedBy {
+        id
+        name
+        email
+      }
+  }
+}
+```
+
+1. playground two sign in
+1. and post
