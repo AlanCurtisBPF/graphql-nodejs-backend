@@ -113,3 +113,42 @@ subscription {
 
 1. playground two sign in
 1. and post
+
+### Voting
+
+#### subscribe
+
+```
+subscription {
+  newVote {
+    id
+    link {
+      url
+      description
+    }
+    user {
+      name
+      email
+    }
+  }
+}
+```
+
+#### vote for link
+
+_vote will only work if you are logged in other wise you will get an error_
+
+```
+mutation {
+  vote(linkId: "__LINK_ID__") {
+    link {
+      url
+      description
+    }
+    user {
+      name
+      email
+    }
+  }
+}
+```
