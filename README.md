@@ -152,3 +152,34 @@ mutation {
   }
 }
 ```
+
+### filters
+
+```
+query {
+  feed(filter:"full") {
+    id
+  	description
+    url
+    postedBy {
+      id
+      name
+    }
+  }
+}
+```
+
+### test pagination
+
+```
+query {
+  feed(
+    take: 1
+    skip: 1
+  ) {
+    id
+    description
+    url
+  }
+}
+```
