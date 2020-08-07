@@ -195,3 +195,15 @@ query {
   }
 }
 ```
+
+### query using filter / sort / and pagination
+
+```
+query {
+  feed(filter: "f", orderBy: { id: desc}, take:3 , skip:0 ) {
+    id
+    description
+    url
+  }
+}
+```
