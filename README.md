@@ -207,3 +207,20 @@ query {
   }
 }
 ```
+
+### count
+
+_feed has been configured to return 2 properties "count" and "links" list_
+
+```
+query {
+  feed {
+    count
+    links {
+      id
+      description
+      url
+    }
+  }
+}
+```
