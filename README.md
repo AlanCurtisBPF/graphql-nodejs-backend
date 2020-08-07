@@ -183,3 +183,15 @@ query {
   }
 }
 ```
+
+### order / sort
+
+```
+query {
+  feed(orderBy: { createdAt: asc }) {
+    id
+    description
+    url
+  }
+}
+```
